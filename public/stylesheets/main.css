@@ -272,3 +272,22 @@
 #footer_text{
 	color: #043385
 }
+
+@media (max-width: 1207px) {
+  .col-md-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .white-box {
+    padding: 10px;
+  }
+
+  .cardtext {
+    font-size: 18px;
+  }
+
+  .carddescription {
+    font-size: 14px;
+  }
+}

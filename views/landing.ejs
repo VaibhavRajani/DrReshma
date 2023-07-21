@@ -892,6 +892,59 @@
             transform: translate(-50px, -50px);
           }
         }
+		  
+		    @media (max-width: 768px) {
+    .h4 {
+      font-size: 24px;
+    }
+
+    .h4.section-heading {
+      margin-bottom: 10px;
+    }
+
+    .h4.section-heading + .h4 {
+      font-size: 28px;
+    }
+
+    .swiper-pagination {
+      bottom: 10px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      transform: translate(-50px, -50px);
+    }
+  }
+
+  /* Additional responsive styles for smaller screens */
+  @media (max-width: 576px) {
+    .h4.section-heading {
+      font-size: 22px;
+    }
+
+    .h4.section-heading + .h4 {
+      font-size: 26px;
+    }
+
+    .swiper-pagination {
+      bottom: 5px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      transform: translate(-40px, -40px);
+    }
+
+    .carder {
+      padding: 15px 0 0 0;
+    }
+
+    .quote {
+      font-size: 11px;
+    }
+  }
       </style>
       <script src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js'></script>
