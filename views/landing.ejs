@@ -1,0 +1,1197 @@
+<%- include("partials/header") %>
+
+  <div class="bg-image-container">
+    <div class="content-container">
+      <h1 class="heading text-indigo">The moment a child is born,</h1>
+      <h1 class="heading text-indigo"> the mother is also born.</h1>
+      <a href="https://www.amazon.com" class="btn btn-primary">Book An Appointment</a>
+    </div>
+  </div>
+
+  <div class="container" id="scrollspyHeading1">
+    <div class="row">
+      <div class="col-md-6 p-4">
+        <p class="h4 pb-2 section-heading">ABOUT ME</p>
+        <p class="fs-6">
+          With over four decades of experience, Dr. Reshma R. Rao has emerged as a shining star in the field of
+          Obstetrics & Gynaecology. Her exceptional care and unwavering dedication to women's health have made her a
+          renowned expert in her field. Holding an M.D. in Gynaecology, Obstetrics & Diseases of Infancy from Bombay
+          University, Dr. Reshma R. Rao combines her extensive qualifications with groundbreaking research to deliver
+          personalized care and transformative experiences to her patients.
+        </p>
+        <p class="fs-6">
+          Practicing at the esteemed Opera House Clinic and consulting at renowned hospitals, Dr. Reshma R. Rao leaves
+          an indelible mark on the lives of women throughout their motherhood journeys.
+        </p>
+        <p class="fs-6">
+          With a genuine passion for nurturing life, she understands the emotional and physical intricacies of the
+          journey, providing a unique blend of expertise and compassion.
+        </p>
+      </div>
+      <div class="col-md-6 p-4">
+        <img src="/About_Me.png" class="img-fluid" alt="About Me Image">
+      </div>
+    </div>
+  </div>
+
+  <section class="our_services" id="scrollspyHeading2">
+    <div class="container p-4" id="services">
+      <h2 class="h4 section-heading">OUR SERVICES</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <p class="section-subheading fw-bolder text-start" id="whatpeople">How can we help you?</p>
+          <ul class="bullet-list">
+            <li><a href="#box-1" class="bullet-link active">- Gynaecological Surgeries</a></li>
+            <li><a href="#box-2" class="bullet-link">- Obstetrics and Pregnancy Care</a></li>
+            <li><a href="#box-3" class="bullet-link">- Reproductive Health and Infertility</a></li>
+            <li><a href="#box-4" class="bullet-link">- Women's Health and Wellness</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="white-box" id="box-1">
+            <img src="Vaginal_Surgery.png" alt="Logo" class="services">
+            <p class="topic pt-2 cardtext">Vaginal Surgery</p>
+            <p class="carddescription">
+              Surgical procedures performed on the vaginal region, such as vaginal reconstruction or repair.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="white-box" id="box-2">
+            <img src="Operative_Laparoscopy.png" alt="Logo" class="services">
+            <p class="topic pt-2 cardtext">Operative Laproscopy</p>
+            <p class="carddescription"> Surgical procedures performed on the vaginal region, such as vaginal
+              reconstruction or repair.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="white-box" id="box-3">
+            <img src="Tube_Litigation.png" alt="Logo" class="services">
+            <p class="topic pt-2 cardtext">Tube Litigation</p>
+            <p class="carddescription"> Permanent contraception method involving the closure or blocking of the
+              fallopian tubes to prevent pregnancy.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="white-box" id="box-4">
+            <img src="AP_Repair.png" alt="Logo" class="services">
+            <p class="topic pt-2 cardtext">Hysteroscopy with AP repair</p>
+            <p class="carddescription"> Diagnostic and surgical procedure to examine the uterus and perform repairs,
+              such as addressing uterine abnormalities or polyps.</p>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <div class="white-box" id="box-5">
+            <img src="Hysterectomy.png" alt="Logo" class="services">
+            <p class="topic pt-2 cardtext">Hysterectomy</p>
+            <p class="carddescription"> Surgical removal of the uterus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const bulletLinks = document.querySelectorAll(".bullet-link");
+      const whiteBoxes = document.querySelectorAll(".white-box");
+
+      bulletLinks.forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = e.target.getAttribute("href");
+          showContent(target);
+          setActiveLink(link);
+        });
+      });
+
+      function showContent(target) {
+        const contentBoxes = document.querySelectorAll(".white-box");
+
+        contentBoxes.forEach(function (box) {
+          const content = getContent(target, box.id);
+          box.innerHTML = content.html;
+          box.style.backgroundColor = content.backgroundColor;
+        });
+      }
+
+      function setActiveLink(link) {
+        bulletLinks.forEach(function (link) {
+          link.classList.remove("active");
+        });
+        link.classList.add("active");
+      }
+
+      function getContent(target, boxId) {
+        switch (target) {
+          case "#box-1":
+            switch (boxId) {
+              case "box-1":
+                return {
+                  html:
+                    '<img src="Vaginal_Surgery.png" alt="Logo" class="services">' +
+                    '<p class="topic pt-2 cardtext">Vaginal Surgery</p>' +
+                    '<p class="carddescription">' +
+                    'Surgical procedures performed on the vaginal region, such as vaginal reconstruction or repair.' +
+                    '</p>'
+                };
+
+              case "box-2":
+                return {
+                  html: 
+					'<img src="Operative_Laparoscopy.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Operative Laproscopy</p>' +
+					'<p class="carddescription">' + 
+					'Surgical procedures performed on the vaginal region, such as vaginal reconstruction or repair.' + 
+					'</p>'
+                };
+              case "box-3":
+                return {
+                  html: 
+					'<img src="Tube_Litigation.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Tube Litigation</p>' +
+					'<p class="carddescription"> Permanent contraception method involving the closure or blocking of the fallopian tubes to prevent pregnancy.' +
+					'</p>',
+                };
+              case "box-4":
+                return {
+                  html: 
+					'<img src="AP_Repair.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Hysteroscopy with AP repair</p>' +
+					'<p class="carddescription"> Diagnostic and surgical procedure to examine the uterus and perform repairs, such as addressing uterine abnormalities or polyps.' + 
+					'</p>',
+                };
+              default:
+                return {
+                  html: 
+					'<img src="Hysterectomy.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Hysterectomy</p>' +
+					'<p class="carddescription"> Surgical removal of the uterus.' +
+					'</p>'
+                };
+            }
+          case "#box-2":
+            switch (boxId) {
+              case "box-1":
+                return {
+                  html: '<img src=".png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext"> High-Risk Obstetrics </p>' +
+					'<p class="carddescription"> Surgical procedures performed on the vaginal region, such as vaginal  care for pregnancies that have increased risks due to maternal or fetal conditions reconstruction or repair.' +
+					'</p>'
+                };
+              case "box-2":
+                return {
+                  html: '<img src="Operative_Laparoscopy.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Ante Natal Care</p>' +
+					'<p class="carddescription">Medical care and monitoring provided during pregnancy to ensure the health of both the mother and the developing fetus. ' +
+					'</p>'
+                };
+              case "box-3":
+                return {
+                  html: '<img src="Tube_Litigation.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Normal Delivery</p>' +
+					'<p class="carddescription"> Vaginal delivery without the need for medical interventions or surgical procedures.' +
+					'</p>'
+                };
+              case "box-4":
+                return {
+                  html: '<img src="AP_Repair.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Complex Obstetrics</p>' +
+					'<p class="carddescription"> Management of pregnancies with multiple complications or complex medical conditions.' +
+					'</p>'
+                };
+              default:
+                return {
+                  html: '<img src=".png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Ectopic Pregnancy</p>' +
+					'<p class="carddescription"> A pregnancy that occurs outside the uterus, typically in the fallopian tube, requiring medical intervention.' +
+					'</p>'
+                };
+            }
+          case "#box-3":
+            switch (boxId) {
+              case "box-1":
+                return {
+                  html: '<img src=".png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Infertility Management</p>' +
+					'<p class="carddescription">Diagnosis and treatment of infertility, including assessment of fertility potential and appropriate interventions.' +
+					'</p>'
+                };
+              case "box-2":
+                return {
+                  html: '<img src="Operative_Laparoscopy.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Contraceptive Options</p>' +
+					'<p class="carddescription">Counseling and provision of various birth control methods to prevent unwanted pregnancies.' +
+					'</p>'
+                };
+              case "box-3":
+                return {
+                  html: '<img src=".png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Tubal Litigation</p>' +
+					'<p class="carddescription">Noncancerous growths in the uterus that can cause symptoms such as heavy menstrual bleeding or pelvic pain.' +
+					'</p>'
+                };
+              case "box-4":
+                return {
+                  html: '<img src="AP_Repair.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Polycystic Ovarian Management</p>' +
+					'<p class="carddescription">Treatment and management of polycystic ovary syndrome (PCOS), a hormonal disorder affecting the ovaries.' +
+					'</p>'
+                };
+              default:
+                return {
+                  html: '<img src="Hysterectomy.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Ovarian Cyst</p>' +
+					'<p class="carddescription">Fluid-filled sacs that form on or within the ovaries, which may require monitoring or treatment.' +
+					'</p>'
+                };
+            }
+          case "#box-4":
+            switch (boxId) {
+              case "box-1":
+                return {
+                  html: '<img src="Vaginal_Surgery.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Menstrual Irregularities</p>' +
+					'<p class="carddescription">Assessment and management of abnormalities in the menstrual cycle, such as heavy or irregular periods.' +
+					'</p>'
+                };
+              case "box-2":
+                return {
+                  html: '<img src="Operative_Laparoscopy.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Chronic Pelvic Pain</p>' +
+					'<p class="carddescription">Diagnosis and management of persistent pain in the pelvic region.' +
+					'</p>'
+                };
+              case "box-3":
+                return {
+                  html: '<img src="Pelvic.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Management of Pelvic Pain</p>' +
+					'<p class="carddescription">Assessment and treatment of various conditions causing pelvic pain, such as endometriosis or pelvic inflammatory disease.' +
+					'</p>'
+                };
+              case "box-4":
+                return {
+                  html: '<img src="Breast_Complaint.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Breast Complaint Management</p>' +
+					'<p class="carddescription">Evaluation and treatment of breast-related concerns, including breast lumps, pain, or abnormalities. ' +
+					'</p>'
+                };
+              default:
+                return {
+                  html: '<img src="Hysterectomy.png" alt="Logo" class="services">' +
+					'<p class="topic pt-2 cardtext">Menopause</p>' +
+					'<p class="carddescription">Support and management of the physiological changes and symptoms experienced during the transition into menopause. ' +
+					'</p>'
+                };
+            }
+          default:
+            return {
+              html: '<p>Default HTML content</p>'
+            };
+        }
+      }
+    });
+
+  </script>
+
+  <div class="container" id="scrollspyHeading3">
+    <div class="row" id="services">
+      <div class="col-md-6 p-4">
+        <h2 class="fw-bolder h4" style="color: #043385; line-height: 1.2; font-size: 33px">With every step, I am here to
+          guide you, <br> celebrate your triumphs,<br> and ease your worries.</h2>
+        <p class="section-subheading">Book an appointment</p>
+        <section>
+          To Book an Appointment, Fill Out the form below. </section>
+        <p>
+          We will get back to you within 24 hours.
+        </p>
+        <form>
+    <div class="row">
+        <div class="col-md-6"><div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control rounded-pill" id="fullName" name="fullName" placeholder="Enter your full name">
+          </div></div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="mobileNumber" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control rounded-pill" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number">
+          </div>
+        </div>
+        
+    </div>
+    
+  
+          <div class="mb-3">
+            <label for="remarks" class="form-label">Remarks</label>
+            <textarea class="form-control rounded-pill" id="remarks" name="remarks" placeholder="Enter any remarks or additional information"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary rounded-pill">Book Appointment</button>
+        </form>
+      </div>
+
+      <div class="col-md-6 p-4">
+        <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/Carousel_1.png" class="d-block w-100" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="/Carousel_2.png" class="d-block w-100" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="/Carousel_1.png" class="d-block w-100" alt="Image 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div> -->
+
+        <div class="container test1">
+          <input type="radio" name="slider" id="item-1" checked>
+          <input type="radio" name="slider" id="item-2">
+          <input type="radio" name="slider" id="item-3">
+          <div class="cards">
+            <label class="card" for="item-1" id="song-1">
+              <img src="/Carousel_1.png" alt="song">
+            </label>
+            <label class="card" for="item-2" id="song-2">
+              <img src="/Carousel_2.png" alt="song">
+            </label>
+            <label class="card" for="item-3" id="song-3">
+              <img src="/Carousel_1.png" alt="song">
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <style>
+        @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+
+
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .test1 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 30px 10px;
+          font-family: 'DM Sans', sans-serif;
+          transition: background .4s ease-in;
+
+          &.blue {
+            background-color: #428aa6;
+          }
+        }
+
+        input[type=radio] {
+          display: none;
+        }
+
+        .card {
+          position: absolute;
+          width: 60%;
+          height: 100%;
+          left: 0;
+          right: 0;
+          margin: auto;
+          transition: transform .4s ease;
+          cursor: pointer;
+        }
+
+        .test1 {
+          width: 100%;
+          max-width: 800px;
+          max-height: 600px;
+          height: 100%;
+          transform-style: preserve-3d;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cards {
+          position: relative;
+          width: 100%;
+          height: 75%;
+          margin-bottom: 20px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+
+        #item-1:checked~.cards #song-3,
+        #item-2:checked~.cards #song-1,
+        #item-3:checked~.cards #song-2 {
+          transform: translatex(-40%) scale(.8);
+          opacity: .4;
+          z-index: 0;
+        }
+
+        #item-1:checked~.cards #song-2,
+        #item-2:checked~.cards #song-3,
+        #item-3:checked~.cards #song-1 {
+          transform: translatex(40%) scale(.8);
+          opacity: .4;
+          z-index: 0;
+        }
+
+        #item-1:checked~.cards #song-1,
+        #item-2:checked~.cards #song-2,
+        #item-3:checked~.cards #song-3 {
+          transform: translatex(0) scale(1);
+          opacity: 1;
+          z-index: 1;
+
+          img {
+            box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+          }
+        }
+
+        .player {
+          background-color: #fff;
+          min-width: 320px;
+          padding: 16px 10px;
+        }
+
+        .upper-part {
+          position: relative;
+          display: flex;
+          align-items: center;
+          margin-bottom: 12px;
+          height: 36px;
+          overflow: hidden;
+        }
+
+        .play-icon {
+          margin-right: 10px;
+        }
+
+        .song-info {
+          width: calc(100% - 32px);
+          display: block;
+        }
+
+        .song-info .title {
+          color: #403d40;
+          font-size: 14px;
+          line-height: 24px;
+        }
+
+        .sub-line {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .subtitle,
+        .time {
+          font-size: 12px;
+          line-height: 16px;
+          color: #c6c5c6;
+        }
+
+        .time {
+          font-size: 12px;
+          line-height: 16px;
+          color: #a5a5a5;
+          font-weight: 500;
+          margin-left: auto;
+        }
+
+        .progress-bar {
+          height: 3px;
+          width: 100%;
+          background-color: #e9efff;
+          border-radius: 2px;
+          overflow: hidden;
+        }
+
+        .progress {
+          display: block;
+          position: relative;
+          width: 60%;
+          height: 100%;
+          background-color: #2992dc;
+          border-radius: 6px;
+        }
+
+        .info-area {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 30px;
+          transition: transform .4s ease-in;
+        }
+
+        #item-2:checked~.player #test {
+          transform: translateY(0);
+        }
+
+        #item-2:checked~.player #test {
+          transform: translateY(-40px);
+        }
+
+        #item-3:checked~.player #test {
+          transform: translateY(-80px);
+        }
+      </style>
+      <script>
+        $('input').on('change', function () {
+          $('body').toggleClass('blue');
+        });
+
+      </script>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container" id="scrollspyHeading4">
+      <h2 class="h4 section-heading">TESTIMONIALS</h2>
+        <h2 class="fw-bolder h4" style="color: #043385; line-height: 1.2; font-size: 33px">What people say about<br> our service</h2>
+
+      <!-- <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-item">
+            <img src="/Carousel_1.png" class="testimonial-image active" alt="Testimonial 1">
+            <h5 class="testimonial-name">John Doe</h5>
+            <p class="testimonial-quote">"I had an amazing experience with their service. Highly recommended!"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-item">
+            <img src="/Carousel_2.png" class="testimonial-image" alt="Testimonial 2">
+            <h5 class="testimonial-name">Jane Smith</h5>
+            <p class="testimonial-quote">"The service provided by them exceeded my expectations. Truly satisfied!"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-item">
+            <img src="/Carousel_2.png" class="testimonial-image" alt="Testimonial 3">
+            <h5 class="testimonial-name">David Johnson</h5>
+            <p class="testimonial-quote">"They have a team of professionals who are dedicated and caring. Excellent service!"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-item">
+            <img src="/Carousel_2.png" class="testimonial-image" alt="Testimonial 4">
+            <h5 class="testimonial-name">Sarah Williams</h5>
+            <p class="testimonial-quote">"I am grateful for their expertise and support throughout my journey. Thank you!"</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div> -->
+
+
+      <section>
+        <div class="container testimonials_car">
+          <div class="swiper swiperCarousel">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="carder">
+                  <img class="avatar" src="/Testimonials1.png" />
+                  <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="125px"
+                    height="125px">
+                    <path
+                      d="M 16.482422 8.9921875 A 1.50015 1.50015 0 0 0 15.943359 9.1074219 C 15.943359 9.1074219 13.068414 10.279429 10.357422 13.464844 C 7.6464301 16.650259 5 21.927419 5 30 A 1.50015 1.50015 0 0 0 5.015625 30.21875 A 8.5 8.5 0 0 0 13.5 39 A 8.5 8.5 0 0 0 13.5 22 A 8.5 8.5 0 0 0 8.7089844 23.480469 C 9.5777265 19.777157 11.122152 17.196657 12.642578 15.410156 C 14.931586 12.720571 17.056641 11.892578 17.056641 11.892578 A 1.50015 1.50015 0 0 0 16.482422 8.9921875 z M 37.482422 8.9921875 A 1.50015 1.50015 0 0 0 36.943359 9.1074219 C 36.943359 9.1074219 34.068414 10.279429 31.357422 13.464844 C 28.64643 16.650259 26 21.927419 26 30 A 1.50015 1.50015 0 0 0 26.015625 30.21875 A 8.5 8.5 0 0 0 34.5 39 A 8.5 8.5 0 0 0 34.5 22 A 8.5 8.5 0 0 0 29.708984 23.480469 C 30.577727 19.777157 32.122152 17.196657 33.642578 15.410156 C 35.931586 12.720571 38.056641 11.892578 38.056641 11.892578 A 1.50015 1.50015 0 0 0 37.482422 8.9921875 z" />
+                  </svg>
+                  <div class="header">
+                    <h1 class="name">Shloka Nimit Shah</h1>
+                  </div>
+                  <div class="quote-container">
+                    <p class="quote">
+						Pregnancy is one of the most challenging phases in a woman's life but Dr Reshma Rao made it quite easy and enjoyable for me. Her practical approach is exactly what we need in this day and age. My journey wouldn't have been the same without her support team who have been very warm and responsive.I'm very grateful to the entire team for looking after me and my little one so well. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="carder">
+                  <img class="avatar" src="/Testimonials2.png" />
+                  <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="125px"
+                    height="125px">
+                    <path
+                      d="M 16.482422 8.9921875 A 1.50015 1.50015 0 0 0 15.943359 9.1074219 C 15.943359 9.1074219 13.068414 10.279429 10.357422 13.464844 C 7.6464301 16.650259 5 21.927419 5 30 A 1.50015 1.50015 0 0 0 5.015625 30.21875 A 8.5 8.5 0 0 0 13.5 39 A 8.5 8.5 0 0 0 13.5 22 A 8.5 8.5 0 0 0 8.7089844 23.480469 C 9.5777265 19.777157 11.122152 17.196657 12.642578 15.410156 C 14.931586 12.720571 17.056641 11.892578 17.056641 11.892578 A 1.50015 1.50015 0 0 0 16.482422 8.9921875 z M 37.482422 8.9921875 A 1.50015 1.50015 0 0 0 36.943359 9.1074219 C 36.943359 9.1074219 34.068414 10.279429 31.357422 13.464844 C 28.64643 16.650259 26 21.927419 26 30 A 1.50015 1.50015 0 0 0 26.015625 30.21875 A 8.5 8.5 0 0 0 34.5 39 A 8.5 8.5 0 0 0 34.5 22 A 8.5 8.5 0 0 0 29.708984 23.480469 C 30.577727 19.777157 32.122152 17.196657 33.642578 15.410156 C 35.931586 12.720571 38.056641 11.892578 38.056641 11.892578 A 1.50015 1.50015 0 0 0 37.482422 8.9921875 z" />
+                  </svg>
+                  <div class="header">
+                    <h1 class="name">Mrs Manisha</h1>
+                  </div>
+                  <div class="quote-container">
+                    <p class="quote"> Dr. Reshma Rao is a wonderful person who listens to our problems very patiently. We have always been happy with her way of dealing with us as patients. The best part is that she remembers the history of our cases and provides the best treatment. We are happy with the doctor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="carder">
+                  <img class="avatar" src="/Testimonials3.png" />
+                  <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="125px"
+                    height="125px">
+                    <path
+                      d="M 16.482422 8.9921875 A 1.50015 1.50015 0 0 0 15.943359 9.1074219 C 15.943359 9.1074219 13.068414 10.279429 10.357422 13.464844 C 7.6464301 16.650259 5 21.927419 5 30 A 1.50015 1.50015 0 0 0 5.015625 30.21875 A 8.5 8.5 0 0 0 13.5 39 A 8.5 8.5 0 0 0 13.5 22 A 8.5 8.5 0 0 0 8.7089844 23.480469 C 9.5777265 19.777157 11.122152 17.196657 12.642578 15.410156 C 14.931586 12.720571 17.056641 11.892578 17.056641 11.892578 A 1.50015 1.50015 0 0 0 16.482422 8.9921875 z M 37.482422 8.9921875 A 1.50015 1.50015 0 0 0 36.943359 9.1074219 C 36.943359 9.1074219 34.068414 10.279429 31.357422 13.464844 C 28.64643 16.650259 26 21.927419 26 30 A 1.50015 1.50015 0 0 0 26.015625 30.21875 A 8.5 8.5 0 0 0 34.5 39 A 8.5 8.5 0 0 0 34.5 22 A 8.5 8.5 0 0 0 29.708984 23.480469 C 30.577727 19.777157 32.122152 17.196657 33.642578 15.410156 C 35.931586 12.720571 38.056641 11.892578 38.056641 11.892578 A 1.50015 1.50015 0 0 0 37.482422 8.9921875 z" />
+                  </svg>
+                  <div class="header">
+                    <h1 class="name">Shalu Jain & Ramakant Jain</h1>
+                  </div>
+                  <div class="quote-container">
+                    <p class="quote"> "It is always a blessing to be able to give birth to another human and become a mother, but you need to have the best team to help you smoothly navigate this journey. I thoroughly appreciate all the efforts and the excellent treatment I have received, not just for the first time but also for being a second-time mom with Dr. Reshma Rao ❤️”
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="carder">
+                  <img class="avatar" src="/Testimonials4.png" />
+                  <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="125px"
+                    height="125px">
+                    <path
+                      d="M 16.482422 8.9921875 A 1.50015 1.50015 0 0 0 15.943359 9.1074219 C 15.943359 9.1074219 13.068414 10.279429 10.357422 13.464844 C 7.6464301 16.650259 5 21.927419 5 30 A 1.50015 1.50015 0 0 0 5.015625 30.21875 A 8.5 8.5 0 0 0 13.5 39 A 8.5 8.5 0 0 0 13.5 22 A 8.5 8.5 0 0 0 8.7089844 23.480469 C 9.5777265 19.777157 11.122152 17.196657 12.642578 15.410156 C 14.931586 12.720571 17.056641 11.892578 17.056641 11.892578 A 1.50015 1.50015 0 0 0 16.482422 8.9921875 z M 37.482422 8.9921875 A 1.50015 1.50015 0 0 0 36.943359 9.1074219 C 36.943359 9.1074219 34.068414 10.279429 31.357422 13.464844 C 28.64643 16.650259 26 21.927419 26 30 A 1.50015 1.50015 0 0 0 26.015625 30.21875 A 8.5 8.5 0 0 0 34.5 39 A 8.5 8.5 0 0 0 34.5 22 A 8.5 8.5 0 0 0 29.708984 23.480469 C 30.577727 19.777157 32.122152 17.196657 33.642578 15.410156 C 35.931586 12.720571 38.056641 11.892578 38.056641 11.892578 A 1.50015 1.50015 0 0 0 37.482422 8.9921875 z" />
+                  </svg>
+                  <div class="header">
+                    <h1 class="name">Mariam Farhan Memon</h1>
+      
+                  </div>
+                  <div class="quote-container">
+                    <p class="quote"> “I’m grateful to Dr Reshma Rao and her team who are so warm and consistent with the way they took care of me. Treasure their constant caring and support .Every little doubt n concern of mine was solved with a very detailed explanation even pre and post natal. I will not bat an eyelid referring her.Her clinic felt just like an extended home to my family and me.It is a boon to have a doctor who is always willing to listen and give me advice.Thank you Dr Reshma Rao for making my experience of becoming a first time mother at 22 a memorable one.🙂. Will cherish the same forever.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Poppins&display=swap");
+		  
+		  .swiper-button-next{
+			  color: #043385;
+		  }
+		  .swiper-button-prev{
+			  color: #043385;
+		  }
+		  
+        .testimonials_car {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          width: 100vw;
+          height: 38vw;
+        }
+
+        .cd__main {
+          display: block !important;
+          background: #ddfcf5 !important;
+          min-height: 450px;
+          height: 100vh;
+        }
+
+        .carder {
+          background-color: #f9fafe;
+          width: 550px;
+          height: 45%;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          padding: 30px 0 0 0;
+          transition: transform 400ms;
+          opacity: 0.5;
+          box-shadow: none;
+        }
+
+        .quote-icon {
+          position: absolute;
+          z-index: 0;
+          opacity: 0.05;
+          left: 3%;
+          top: 0;
+		  fill: rgba(255, 0, 98);
+        }
+
+        .avatar {
+          width: 120px;
+          height: 120px;
+          border-radius: 150px;
+          border: 5px solid #f9fafe;
+          box-shadow: 0 0 50px #ccc;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-60px, -60px);
+          z-index: 1;
+        }
+
+        .header {
+          margin: 50px 0 0 0;
+          text-align: center;
+          z-index: 1;
+        }
+
+        .name {
+          font-family: "Hammersmith One", sans-serif;
+          text-transform: uppercase;
+          font-size: 22px;
+          margin: 0;
+        }
+
+        .title {
+          font-family: "Hammersmith One", sans-serif;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 400;
+          margin: 5px 0 0 0;
+          padding: 0 5px;
+          color: #7ccdc5;
+        }
+
+        .quote-container {
+          margin: 0;
+          height: 100%;
+          z-index: 1;
+          padding: 15px 30px 30px 30px;
+          overflow: hidden;
+        }
+
+        .quote {
+          width: 100%;
+          height: 95%;
+          font-family: "Poppins", sans-serif;
+          font-size: 12px;
+          text-align: center;
+          color: #73808c;
+          margin: 0;
+        }
+
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+
+        .swiper-slide {
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .swiper-slide-active {
+          z-index: 1;
+        }
+
+        .swiper-slide-active .carder {
+          box-shadow: 0 8px 30px -7px #c9dff0;
+          opacity: 1;
+          transform: scale(1.5);
+        }
+
+        .swiper {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .swiper-button-next:focus,
+        .swiper-button-prev:focus {
+          outline: none;
+        }
+
+        @media (max-height: 400px) {
+          .header {
+            margin: 40px 0 0 0;
+          }
+
+          .name {
+            font-size: 12px;
+          }
+
+          .title {
+            font-size: 10px;
+          }
+
+          .quote-container {
+            padding: 5px 20px 20px 20px;
+          }
+
+          .quote-icon {
+            width: 75px;
+            height: 75px;
+          }
+
+          .avatar {
+            width: 100px;
+            height: 100px;
+            transform: translate(-50px, -50px);
+          }
+        }
+      </style>
+      <script src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js'></script>
+
+      <script>
+
+        const swiper = new Swiper(".swiperCarousel", {
+          slidesPerView: 3,
+          centeredSlides: true,
+          spaceBetween: 10,
+          keyboard: {
+            enabled: true,
+          },
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+
+        const slides = document.getElementsByClassName("swiper-slide");
+        for (const slide of slides) {
+          slide.addEventListener("click", () => {
+            const { className } = slide;
+            if (className.includes("swiper-slide-next")) {
+              swiper.slideNext();
+            } else if (className.includes("swiper-slide-prev")) {
+              swiper.slidePrev();
+            }
+          });
+        }
+
+        function resizeTextToFit() {
+          const quoteEls = document.getElementsByClassName('quote');
+          for (const el of quoteEls) {
+            el.style.width = el.offsetWidth;
+            el.style.height = el.offsetHeight;
+          }
+          textFit(quoteEls, { maxFontSize: 14 });
+        }
+        resizeTextToFit();
+        addEventListener("resize", (event) => {
+          resizeTextToFit();
+        });
+      </script>
+  </section>
+
+  <!-- <script>
+	$(document).ready(function() {
+	  $(".carousel").carousel({
+		interval: 5000 // Set the interval time for automatic carousel transition (in milliseconds)
+	  });
+			  // Apply blur effect to inactive testimonial images
+	  $(".carousel").on("slide.bs.carousel", function() {
+		$(".testimonial-image").addClass("blur");
+	  });
+
+	  // Remove blur effect from active testimonial image
+	  $(".carousel").on("slid.bs.carousel", function() {
+		$(".carousel-item.active .testimonial-image").removeClass("blur");
+	  });
+
+	  // Set active testimonial image when clicked
+	  $(".testimonial-image").on("click", function() {
+		$(".testimonial-image").removeClass("active");
+		$(this).addClass("active");
+	  });
+	});
+</script> -->
+  <br>
+
+  <section id="services">
+    <div class="container" id="scrollspyHeading5">
+      <h2 class="h4 section-heading pb-3">RESEARCH PAPERS</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="paper-section">
+            <div class="paper-details" style="background: #043385; border-radius: 15px;">
+              <div class="paper-image">
+                <img src="/Research_Paper.png" alt="Research Paper 1">
+              </div>
+              <div class="paper-info">
+                <div class="paper-description-box">
+                  <h4 class="paper-heading">“A review of 58 Rh-Iso immunised cases”</h4>
+                  <div class="paper-description">Reshma R. Rao, Snehlata C. Gupte, Nayana A. Dastur, Vandana R.
+                    Walvekar, Ramesh D. Pandit.</div>
+                  <a href="#" class="read-more-link">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="paper-list">
+            <div class="paper-item active" onclick="showPaperDetails(1)" data-paper-id="1">
+              <h5 class="paper-name">“A review of 58 Rh-Iso immunised cases”</h5>
+              <div class="paper-description">Reshma R. Rao, Snehlata C. Gupte, Nayana A. Dastur, Vandana R. Walvekar,
+                Ramesh D. Pandit.</div>
+            </div>
+            <div class="paper-item" onclick="showPaperDetails(2)" data-paper-id="2">
+              <h5 class="paper-name">“The Mini-pill, a contraceptive for lactating women”</h5>
+              <div class="paper-description">Reshma Rao, D. N. Patel, Armin Jamshedji, published in Journal of Obst.
+                &amp; Gyn. of India, Vol. XXXYI No. 3 Jun 1986, pp 505-511.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showPaperDetails(paperId) {
+      const paperItems = document.querySelectorAll('.paper-item');
+      const paperHeading = document.querySelector('.paper-heading');
+      const paperDescription = document.querySelector('.paper-description');
+
+      paperItems.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      const selectedPaper = document.querySelector(`.paper-item[data-paper-id="${paperId}"]`);
+      selectedPaper.classList.add('active');
+
+      const selectedPaperHeading = selectedPaper.querySelector('.paper-name');
+      const selectedPaperDescription = selectedPaper.querySelector('.paper-description');
+
+      paperHeading.textContent = selectedPaperHeading.textContent;
+      paperDescription.textContent = selectedPaperDescription.textContent;
+    }
+  </script>
+
+  <br>
+
+  <section  id="services">
+    <div class="container" id="scrollspyHeading6">
+      <h2 class="h4 section-heading text-center">VISIT US AT</h2>
+      <div class="border-bottom mb-4"></div>
+
+      <div id="map" class="map-view"></div>
+      <div class="location-details" id="location-details">
+        <div class="location">
+          <div class="pin" onclick="showLocationDetails(1)">
+            <div class="pin-info">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="location-title">Reshma Rao's Clinic</h5>
+                </div>
+                <div class="col-md-4">
+                  <h5 class="location-title">Timings</h5>
+                </div>
+              </div>
+              <div class="location-details-row">
+                <div class="col-md-6">
+                  <p class="location-address">34, 4 Floor, A Block, 534, Sandhurst Bridge, Opera House, Mumbai 400 007
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <div class="location-timings">
+                    <p>Mon-Fri: 9am-5pm</p>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <a href="#" class="btn btn-primary">Book An Appointment</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat the above code for other locations -->
+      </div>
+    </div>
+
+    <style>
+      /* CSS styles for the map container */
+      #map {
+        height: 400px;
+      }
+
+      /* CSS styles for the location details section */
+      #location-details {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #location-details h5 {
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .location-details-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .location-address,
+      .location-timings {
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .book-appointment-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .book-appointment-btn:hover {
+        background-color: darkblue;
+      }
+    </style>
+
+    <script>
+      function initMap() {
+        const locations = [
+          {
+            title: "Reshma Rao's Clinic",
+            address: "34, 4 Floor, A Block, 534, Sandhurst Bridge, Opera House, Mumbai 400 007.",
+            timings: "Mon-Fri: 9am-5pm",
+            coordinates: { lat: 18.958253262549388, lng: 72.81916381282775 },
+          },
+          {
+            title: "Bhatia Hospital",
+            address: "Tardeo Rd, Old Chikalwadi, Grant Road (W), Tardeo, Mumbai, Maharashtra 400007",
+            timings: "Mon-Fri: 8am-6pm",
+            coordinates: { lat: 18.965901371516804, lng: 72.81329513398421 },
+          },
+          {
+            title: "Ruxmani Hospital",
+            address: "Babulnath Rd, Opp Babulnath temple, Babulnath, Dadi Sheth Wadi, Malabar Hill, Mumbai, Maharashtra 400007",
+            timings: "Mon-Fri: 8am-6pm",
+            coordinates: { lat: 18.957807297899592, lng: 72.80945512747584 },
+          },
+          {
+            title: "Breach Candy Hospital",
+            address: "60 A, Bhulabhai Desai Marg, Breach Candy, Cumballa Hill, Mumbai, Maharashtra 400026",
+            timings: "Mon-Fri: 8am-6pm",
+            coordinates: { lat: 18.97275153750877, lng: 72.80437235473201 },
+          },
+          {
+            title: "St Elizabeth's Hospital",
+            address: "Jamanadas Mehta Rd, Teen Batti, Malabar Hill, Mumbai, Maharashtra 400006",
+            timings: "Mon-Fri: 8am-6pm",
+            coordinates: { lat: 18.94898022554339, lng: 72.79576253116592 },
+          },
+          {
+            title: "Saifee Hospital",
+            address: "15/17, Maharshi Karve Rd, opposite Charni Road, Charni Road East, Opera House, Station, Mumbai - 400004",
+            timings: "Mon-Fri: 8am-6pm",
+            coordinates: { lat: 18.953390557330327, lng: 72.81857442271372 },
+          }
+        ];
+
+        // Create a map centered on a specific location
+        const centerCoordinates = { lat: 18.958253262549388, lng: 72.81916381282775 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: centerCoordinates,
+          zoom: 14,
+        });
+
+        const shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: "poly",
+        };
+
+        // Add markers for each location
+        locations.forEach((location, index) => {
+          const marker = new google.maps.Marker({
+            position: location.coordinates,
+            map: map,
+            title: location.title,
+            shape: shape,
+          });
+
+          // Add click event listener to display location details
+          marker.addListener("click", () => {
+            showLocationDetails(index);
+          });
+        });
+
+        // Function to display location details
+        function showLocationDetails(locationIndex) {
+          const detailsContainer = document.getElementById("location-details");
+          const location = locations[locationIndex];
+          detailsContainer.innerHTML = `
+			<div class="location">
+			  <div class="pin" onclick="showLocationDetails(1)">
+				<div class="pin-info">
+				  <div class="row">
+					<div class="col-md-6">
+					  <h5 class="location-title">${location.title}</h5>
+					</div>
+					<div class="col-md-4">
+					  <h5 class="location-title">Timings</h5>
+					</div>
+				  </div>
+				  <div class="location-details-row">
+					<div class="col-md-6">
+					  <p class="location-address">${location.address}</p>
+					</div>
+					<div class="col-md-4">
+					  <div class="location-timings">
+						<p>${location.timings}</p>
+					  </div>
+					</div>
+					<div class="col-md-2">
+					  <a href="#" class="book-appointment-btn btn btn-primary rounded-pill">Book An Appointment</a>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+				  `;
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg92UQ4Ivm_kpQ2aAb9Foe-ybcg8_YLNw&callback=initMap"
+      async defer></script>
+
+  </section>
+
+
+  <%- include("partials/footer") %>

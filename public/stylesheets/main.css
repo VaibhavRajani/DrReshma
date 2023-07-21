@@ -1,0 +1,269 @@
+.bg-image-container {
+  position: relative;
+  min-height: 400px;
+  background-image: url('/Heading_Image.png');
+  background-size: cover;
+  background-position: center;
+	margin-bottom: 60px;
+}
+
+#services{
+	margin-top: 60px;
+}
+.content-container {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 50%;
+  text-align: left;
+}
+
+.heading {
+  color: #043385;
+  margin-bottom: 0rem;
+}
+
+#whatpeople{
+	color: #043385;
+	font-size: 30px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.btn {
+  margin-top: 40px;
+  background: #043385;
+  border-radius: 17px;
+}
+
+.logo {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Preserve the aspect ratio */
+}
+
+.section-heading {
+  text-align: left;
+  padding-left: 0;
+	    color: #043385;
+
+  display: inline-block;
+	padding-bottom: 10px;
+}
+
+.section-heading::after {
+  content: "";
+  display: block;
+
+  width: 50px;
+  border-bottom: 2px solid #F26199;
+  margin-top: -0.5px;
+}
+
+
+.section-subheading {
+  font-weight: bold;
+  color: black;
+  font-size: 1.2em;
+  padding-top: 10px;
+}
+
+
+.bullet-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.bullet-list li {
+  margin-bottom: 10px;
+}
+
+.white-box {
+  height: 285px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 25px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(4, 51, 133, 0.25);
+}
+
+.services {
+    width: 67px;
+    height: 67px;
+}
+
+
+.our_services {
+	background: hsla(338, 62%, 90%, 1);
+	background: linear-gradient(270deg, hsla(338, 62%, 90%, 1) 0%, hsla(0, 0%, 100%, 1) 78%);
+	background: -moz-linear-gradient(270deg, hsla(338, 62%, 90%, 1) 0%, hsla(0, 0%, 100%, 1) 78%);
+	background: -webkit-linear-gradient(270deg, hsla(338, 62%, 90%, 1) 0%, hsla(0, 0%, 100%, 1) 78%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F5D5E1", endColorstr="#FFFFFF", GradientType=1 );
+	padding: 20px;
+}
+
+#navpink{
+	color: #F26199;	
+}
+
+#navpink:hover{
+	color: #043385;
+}
+
+.bullet-link.active {
+    color: #043385;
+    font-weight: bold;
+    opacity: 1;
+}
+.bullet-link {
+    color: #043385;
+    text-decoration: none;
+    opacity: 0.6;
+}
+.bullet-link.topic {
+  color: blue;
+  font-weight: 900;
+}
+
+.white-box:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid white;
+  filter: blur(3px);
+  transition: filter 0.3s;
+}
+
+.testimonial-image.active {
+  filter: none;
+}
+
+.carousel-item.active .testimonial-image {
+  filter: blur(3px);
+}
+
+.carousel-item.active .testimonial-image.active {
+  filter: none;
+}
+
+
+.paper-image {
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #043385;
+  border-radius: 10px;
+}
+
+.paper-image img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.paper-details:hover .paper-image img {
+  transform: scale(1.1);
+}
+
+.paper-info {
+  flex: 1;
+}
+
+.paper-heading {
+  font-weight: bold;
+}
+
+.paper-section {
+  gap: 20px;
+  color: white; /* White font color */
+  margin: 10px;
+}
+
+.paper-description-box {
+  background-color: #043385; /* Darker background color */
+  color: white; /* White font color */
+  border-radius: 10px;
+  padding-bottom: 43px;
+  padding-top: 28px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-family: Arial, sans-serif; /* Better font */
+  font-size: 14px; /* Slightly smaller font size */
+}
+
+.read-more-link {
+  text-decoration: underline;
+  color: white;
+  float: right; /* Align to the right */
+}
+
+
+.paper-description {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+.paper-list {
+  flex: 1;
+}
+
+.paper-name{
+	font-size: 18px;
+}
+
+.paper-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 18px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.paper-item:hover {
+  background-color: #FAD9F5;
+}
+
+.paper-item.active {
+  background-color: #FAD9F5;
+}
+
+.footerimg {
+	width: 75px;
+	height: auto;
+}
+
+.cardtext {
+	color: #043385;
+	font-family: Helvetica Neue;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 45px; /* 150% */
+}
+
+.carddescription {
+	color: #043385;
+	font-family: Helvetica Neue;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+
+#footer_text{
+	color: #043385
+}
