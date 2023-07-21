@@ -85,12 +85,23 @@
   height: 285px;
   width: 100%;
   background-color: white;
+  color: #043385;
   border: 1px solid #ddd;
   margin-bottom: 20px;
   padding: 25px;
   font-weight: bold;
   border-radius: 5px;
   box-shadow: 0px 4px 4px 0px rgba(4, 51, 133, 0.25);
+}
+
+.white-box:hover {
+  background-color: #043385; /* Dark blue background on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* Hover effect for the image inside the white box */
+.white-box:hover img.services {
+  filter: brightness(0) invert(1); /* Invert the image (turn it white) on hover */
 }
 
 .services {
@@ -131,10 +142,6 @@
   font-weight: 900;
 }
 
-.white-box:hover {
-  background-color: lightblue;
-  cursor: pointer;
-}
 
 .testimonial-image {
   width: 100px;
@@ -247,7 +254,6 @@
 }
 
 .cardtext {
-	color: #043385;
 	font-family: Helvetica Neue;
 	font-size: 25px;
 	font-style: normal;
@@ -256,7 +262,6 @@
 }
 
 .carddescription {
-	color: #043385;
 	font-family: Helvetica Neue;
 	font-size: 18px;
 	font-style: normal;
